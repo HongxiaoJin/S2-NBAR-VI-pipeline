@@ -1,7 +1,7 @@
 # S2-NBAR-VI-pipeline
 Calculate S2 Vegetation indices (PPI, NIRv, EVI2, and NDVI) after get magnitude using WIMBALS inversion 
 
-A complete, production-ready framework for processing Sentinel-2 BRDF magnitude data to vegetation indices (PPI, NDVI, NIRv, EVI2) with quality assessment.
+A complete, production-ready framework for generating vegetation indices (PPI, NDVI, NIRv, EVI2) with quality assessment over entire time series of tile imagery, after Sentinel-2 magnitude + covariance data finished.
 
 **Author:** Hongxiao Jin  
 **Version:** 1.0.0  
@@ -221,7 +221,7 @@ The QA layer provides informational quality flags:
 ### PPI (Plant Phenology Index)
 
 ```
-PPI = -0.25 × (1 + MDVI) / (1 - MDVI) × log(|ratio|) / atmospheric_term
+PPI = -0.25 × (1 + MDVI) / (1 - MDVI) × log(ratio) / atmospheric_term
 
 where:
   ratio = (MDVI - DVI) / (MDVI - DVI_soil)
