@@ -453,7 +453,7 @@ This software is provided as-is for research and operational use.
 For questions or issues:
 1. Check this README
 2. Review log files for error messages
-3. Contact: hongxiao.jin@example.com
+3. Contact: hongxiao.jin@mgeo.lu.se;expertonrs@gmail.com
 
 ---
 
