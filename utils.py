@@ -3,7 +3,7 @@
 """
 Shared utilities for Sentinel-2 NBAR processing pipeline
 
-Author: Hongxiao Jin
+Author: Hongxiao Jin, 2026-01-29
 """
 
 import re
