@@ -334,7 +334,7 @@ def latitude_array_for_window(src, window):
 
 def solar_zenith_angle(doy, lat, hour=11):
     """
-    Calculate solar zenith angle
+    Calculate solar zenith angle (Modified from VITO script)
     
     Parameters:
     -----------
@@ -343,7 +343,7 @@ def solar_zenith_angle(doy, lat, hour=11):
     lat : float or np.ndarray
         Latitude (degrees)
     hour : float
-        Hour of day (default: 11 for NBAR standard)
+        Hour of day (default: 11 for Sentinel-2 average passing time over EU area)
     
     Returns:
     --------
