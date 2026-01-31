@@ -1,1 +1,8 @@
-note.txt
+*.tif
+*.tiff
+*.nc
+*.h5
+*.hdf
+*.log
+output/
+tmp/

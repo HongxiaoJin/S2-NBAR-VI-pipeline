@@ -1,0 +1,63 @@
+first check if image dimension correct
+python imageinfo.py   --imfolder /projects/eko/fs7/proj/HRVPP2/data/Stelios/33WXR/   --file-ext tiff
+
+
+s2_nbar_processing/
+├── utils.py                      # Shared utilities (config, logging, geospatial functions)
+├── step1_nbar.py                 # Step 1: NBAR from magnitude
+├── step2_mdvi_sdvi.py            # Step 2: MDVI/SDVI calculation
+├── step3_vegetation_indices.py   # Step 3: PPI, NDVI, NIRv, EVI2 + QA
+├── run_pipeline.py               # Master runner for all steps
+├── README.md                     # Comprehensive documentation
+├── QUICKSTART.md                 # 5-minute setup guide
+└── config/
+    ├── config_template.json      # Configuration template
+    └── config_32UMU_example.json # Example for your 32UMU tile
+    
+# Step 1: NBAR
+python step1_nbar.py --config config/my_tile.json
+
+# Step 2: MDVI/SDVI
+python step2_mdvi_sdvi.py --config config/my_tile.json --workers 10
+
+# Step 3: Vegetation Indices
+python step3_vegetation_indices.py --config config/my_tile.json
+
+
+# Run everything with one command:
+python run_pipeline.py --config config/my_tile.json
+
+Or run specific steps:
+python run_pipeline.py --config config/my_tile.json --steps 2,3
+
+
+🚀 How to Use
+
+Setup:
+
+bashcd s2_nbar_processing
+cp config/config_template.json config/config_29SQB.json
+# Edit config_29SQB.json with your paths
+
+Run:
+
+bash# Full pipeline
+python run_pipeline.py --config config/config_29SQB.json
+python run_pipeline.py --config config/config_34UDU.json
+
+# Or individual steps
+python step2_mdvi_sdvi.py --config config/config_29SQB.json
+
+python run_pipeline.py --config config/config_31UCQ.json --steps 2,3
+
+Monitor:
+
+bashtail -f logs/pipeline_*.log
+📊 Benefits
+✅ Maintainable: All shared code in utils.py
+✅ Flexible: JSON config - no code changes needed
+✅ Debuggable: Comprehensive logs
+✅ Scalable: Parallel processing support
+✅ Documented: README + QUICKSTART guides
+✅ Professional: Production-ready code quality
+The framework is ready to use - just update the config file with your paths and run!

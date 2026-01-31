@@ -1,0 +1,97 @@
+{
+  "project": {
+    "name": "S2-NBAR_to_PPI_Processing",
+    "tile": "32UMU",
+    "description": "Sentinel-2 NBAR vegetation indices processing"
+  },
+  
+  "paths": {
+    "magnitude_dir": "/projects/eko/fs7/proj/HRVPP2/data/Stelios/32UMU",
+    "nbar_dir": "/projects/eko/fs7/proj/HRVPP2/data/Stelios/32UMU_nbar_sza11",
+    "mdvi_file": "/projects/eko/fs7/proj/HRVPP2/data/Stelios/32UMU_nbar_sza11_MDVI_Q95_int16.tif",
+    "sdvi_file": "/projects/eko/fs7/proj/HRVPP2/data/Stelios/32UMU_nbar_sza11_SDVI_Q05_20x20_int16.tif",
+    "output_dir": "/projects/eko/fs7/proj/HRVPP2/data/Stelios/32UMU_nbar_sza11_PPI_OUT",
+    "log_dir": "./logs"
+  },
+  
+  "dates": {
+    "start_date": "20190101",
+    "end_date": "20231231"
+  },
+  
+  "processing": {
+    "block_size": 549,
+    "n_blocks": 20,
+    "workers": 10,
+    "compress": "ZSTD"
+  },
+  
+  "sza": {
+    "mode": "sza11",
+    "hour": 11,
+    "folder_sza": null,
+    "sza_file": null
+  },
+  
+  "vegetation_indices": {
+    "ppi": true,
+    "ndvi": true,
+    "nirv": true,
+    "evi2": true
+  },
+  
+  "scales": {
+    "reflectance_in": 1e-4,
+    "mdvi": 10000.0,
+    "sdvi": 10000.0,
+    "output": 1000.0
+  },
+  
+  "nodata": {
+    "int16": -9999,
+    "uint8": 255
+  },
+  
+  "bands": {
+    "red": 5,
+    "nir": 7,
+    "cov_red": 6,
+    "cov_nir": 8
+  },
+  
+  "wavelengths": {
+    "b02": 490,
+    "b03": 560,
+    "b04": 665,
+    "b08": 842
+  },
+  
+  "ppi": {
+    "min": -1.0,
+    "max": 5.0,
+    "uncertainty_factor": 0.90,
+    "mask_negative_dvi": true
+  },
+  
+  "qa_flags": {
+    "invalid": 254,
+    "sand": 252,
+    "unsuccessful": 253,
+    "nodata": 255
+  },
+  
+  "filters": {
+    "gaussian_sigma": 1.0,
+    "mdvi_clip_min": 0.18,
+    "mdvi_clip_max": 0.99,
+    "mdvi_adjustment": 0.005,
+    "sdvi_min": 0.005,
+    "sdvi_max": 0.09
+  },
+  
+  "mdvi_sdvi": {
+    "mdvi_quantile": 0.95,
+    "sdvi_quantile": 0.05,
+    "exclude_zero_dvi": true
+  }
+}
