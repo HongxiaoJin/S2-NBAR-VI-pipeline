@@ -31,7 +31,7 @@ This pipeline processes Sentinel-2 data through three main steps:
 ## Directory Structure
 
 ```
-s2_nbar_processing/
+S2-NBAR-VI-pipeline/
 ├── utils.py                      # Shared utilities
 ├── step1_nbar.py                 # Step 1: NBAR calculation
 ├── step2_mdvi_sdvi.py            # Step 2: MDVI/SDVI calculation
