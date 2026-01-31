@@ -4,7 +4,7 @@
 Step 2: Compute MDVI (per-pixel) and SDVI (20x20 blocks) from NBAR
 
 This script calculates Maximum DVI (MDVI) at 95th percentile per pixel
-and Soil DVI (SDVI) at 5th percentile per 20x20 block.
+and Soil DVI (SDVI) at 5th percentile per block of 549x549 pixels, 20x20 blocks in total.
 
 Author: Hongxiao Jin
 """
