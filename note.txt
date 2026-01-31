@@ -2,7 +2,7 @@ first check if image dimension correct
 python imageinfo.py   --imfolder /projects/eko/fs7/proj/HRVPP2/data/Stelios/33WXR/   --file-ext tiff
 
 
-s2_nbar_processing/
+S2-NBAR-VI-pipeline/
 ├── utils.py                      # Shared utilities (config, logging, geospatial functions)
 ├── step1_nbar.py                 # Step 1: NBAR from magnitude
 ├── step2_mdvi_sdvi.py            # Step 2: MDVI/SDVI calculation
